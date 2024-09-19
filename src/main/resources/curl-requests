@@ -1,0 +1,44 @@
+curl --request POST \
+  --url http://localhost:8080/auth \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/8.6.1' \
+  --cookie JSESSIONID=42F5C7E54466EB2BFB51C340715F2AEC \
+  --data '{
+	"username": "user",
+	"password": "user123"
+}'
+
+curl --request POST \
+  --url http://localhost:8080/auth \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/8.6.1' \
+  --cookie JSESSIONID=42F5C7E54466EB2BFB51C340715F2AEC \
+  --data '{
+	"username": "admin",
+	"password": "admin123"
+}'
+
+curl --request GET \
+    --url http://localhost:8080/user \
+    --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiaXNzIjoiYXV0aCIsImV4cCI6MTcyNjc3MDMxMywiaWF0IjoxNzI2NzY2NzEzfQ.ckUr0ovWUaiqDpoxVp23EQ1wBE1tAo002VhAC3BuDb0' \
+    --header 'User-Agent: insomnia/8.6.1' \
+    --cookie JSESSIONID=42F5C7E54466EB2BFB51C340715F2AEC
+
+
+curl --request GET \
+    --url http://localhost:8080/admin \
+    --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgiLCJleHAiOjE3MjY3NzAzMjEsImlhdCI6MTcyNjc2NjcyMX0.9bP0HEoUFlwy69tehIrrMJ9GFz3cQjK7bQcfw52zT5E' \
+    --header 'User-Agent: insomnia/8.6.1' \
+    --cookie JSESSIONID=42F5C7E54466EB2BFB51C340715F2AEC
+
+
+curl --request POST \
+  --url http://localhost:8080/auth2/login \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/8.6.1' \
+  --header 'x-source: M02' \
+  --cookie JSESSIONID=42F5C7E54466EB2BFB51C340715F2AEC \
+  --data '{
+    "email": "guest@guest.com",
+    "password": "guest"
+}'
